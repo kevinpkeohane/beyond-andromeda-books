@@ -312,6 +312,91 @@
     }
     .buy-btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
+    /* ── REVIEWS CAROUSEL ── */
+    .reviews { background: var(--black); }
+    .carousel { position: relative; max-width: 860px; margin: 1rem auto 0; }
+    .carousel-track {
+      display: flex;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      scroll-snap-align: center;
+      padding: 0.5rem;
+    }
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2.5rem;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 320px; justify-content: center;
+    }
+    .review-stars {
+      color: var(--gold);
+      font-size: 1.15rem; letter-spacing: 0.28em;
+      margin-bottom: 1.1rem;
+    }
+    .review-stars .half { opacity: 0.55; }
+    .review-quote {
+      font-size: clamp(1.05rem, 2vw, 1.25rem); font-style: italic;
+      color: var(--cream); line-height: 1.6; max-width: 34em;
+    }
+    .review-meta {
+      margin-top: 1.6rem; font-family: var(--display);
+      font-size: 0.72rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .review-book {
+      margin-top: 0.25rem; font-size: 0.85rem; color: var(--muted);
+    }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: 1px solid var(--border); color: var(--muted);
+      width: 44px; height: 44px; cursor: pointer; font-size: 1.2rem;
+      transition: color 0.2s, border-color 0.2s; z-index: 5;
+    }
+    .carousel-btn:hover { color: var(--cream); border-color: var(--gold); }
+    .carousel-prev { left: -1rem; }
+    .carousel-next { right: -1rem; }
+    .carousel-dots { text-align: center; margin-top: 1.4rem; }
+    .carousel-dot {
+      display: inline-block; width: 9px; height: 9px; margin: 0 5px;
+      border-radius: 50%; background: var(--border); cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active { background: var(--crimson); }
+    .carousel-brand {
+      text-align: center; color: var(--muted); font-size: 0.8rem;
+      font-style: italic; margin-top: 2.2rem;
+    }
+
+    /* ── ILLUSTRATIONS ── */
+    .gallery { background: var(--dark); border-top: 1px solid var(--border); }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr);
+      gap: 1.2rem; margin-top: 1rem;
+    }
+    .gallery-item {
+      grid-column: span 6; position: relative;
+      overflow: hidden; background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .gallery-item.gallery-wide { grid-column: span 12; }
+    .gallery-img {
+      display: block; width: 100%; height: auto;
+      transition: transform .4s ease;
+    }
+    .gallery-item:hover .gallery-img { transform: scale(1.025); }
+    .gallery-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 3.5rem 1.2rem 1rem;
+      color: var(--cream); font-size: .9rem; font-style: italic;
+      background: linear-gradient(transparent, rgba(3,4,14,.94));
+    }
+
     /* ── AUTHOR ── */
     .author { background: var(--dark); border-top: 1px solid var(--border); }
     .author-inner {
@@ -415,6 +500,8 @@
   <a href="#" class="nav-logo">Beyond <span>Andromeda</span></a>
   <ul class="nav-links">
     <li><a href="#books">Books</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#gallery">Illustrations</a></li>
     <li><a href="#author">Author</a></li>
     <li><a href="#newsletter" class="nav-cta">Get Updates</a></li>
   </ul>
@@ -453,7 +540,7 @@
         <ul>
           <li><span class="done">Genesis Rising — Tome I</span></li>
           <li><span class="done">The Guardian — Tome II</span></li>
-          <li><span class="coming">The Open Hand — Tome III</span></li>
+          <li><span class="done">The Open Hand — Tome III</span></li>
         </ul>
       </div>
     </div>
@@ -482,10 +569,9 @@
             <em>Across four billion years, she does both anyway.</em> And the dangerous scripture she hides in a people's oldest stories — check the hand of everything that calls itself a god — is about to become the only thing standing between a world and the sky coming for it.
           </p>
           <div class="buy-buttons">
-            <!-- TODO: Replace # with actual buy links -->
-            <a href="#" class="buy-btn buy-btn-primary">Amazon</a>
-            <a href="#" class="buy-btn">Barnes &amp; Noble</a>
-            <a href="#" class="buy-btn">Kobo</a>
+            <a href="https://a.co/d/03JqYFyu" class="buy-btn buy-btn-primary">Amazon</a>
+            <a href="https://www.barnesandnoble.com/w/genesis-rising-kennedy-maceoghain/1151051205" class="buy-btn">Barnes &amp; Noble</a>
+            <a href="https://www.kobo.com/us/es/ebook/genesis-rising-4" class="buy-btn">Kobo</a>
             <a href="https://kennedymaceoghain.com" class="buy-btn">Direct</a>
           </div>
         </div>
@@ -505,33 +591,197 @@
             <em>At the heart of creation sleeps something worse than a weapon.</em> And a good man, certain his reasons are just, is about to talk it into waking.
           </p>
           <div class="buy-buttons">
-            <!-- TODO: Replace # with actual buy links -->
-            <a href="#" class="buy-btn buy-btn-primary">Amazon</a>
-            <a href="#" class="buy-btn">Barnes &amp; Noble</a>
+            <a href="https://a.co/d/00Oefxo1" class="buy-btn buy-btn-primary">Amazon</a>
+            <a href="https://www.barnesandnoble.com/w/the-guardian-kennedy-maceoghain/1151051227" class="buy-btn">Barnes &amp; Noble</a>
+            <!-- TODO: Kobo link TBC -->
             <a href="#" class="buy-btn">Kobo</a>
             <a href="https://kennedymaceoghain.com" class="buy-btn">Direct</a>
           </div>
         </div>
       </div>
 
-      <!-- Tome III: The Open Hand — Coming Soon -->
-      <div class="book-card coming-soon">
+      <!-- Tome III: The Open Hand -->
+      <div class="book-card">
         <div class="book-cover">
           <img src="covers/open-hand.jpg" alt="The Open Hand — Beyond Andromeda Tome III" loading="lazy" />
-          <div class="coming-soon-overlay">
-            <span class="coming-soon-tag">Coming Soon</span>
-          </div>
         </div>
         <div class="book-body">
           <p class="book-number">Beyond Andromeda · Tome III</p>
           <h3 class="book-title">The Open Hand</h3>
-          <p class="book-series-line">The final answer. The last stand.</p>
+          <p class="book-series-line">The sealing is broken. The oldest hunger in creation is loose.</p>
           <p class="book-blurb">
-            The saga concludes. Subscribe below to be the first to know when Tome III arrives.
+            Something has come loose beneath the world. A silence that eats the mind from the top down — that takes the brightest and the bravest first, freezing them mid-thought, hands open, lost forever in a beautiful question they will never again let themselves answer. It cannot be burned, because fire is its food. It cannot be walled out, because it is already inside the asking.<br><br>
+            Beside Anya through all of it is the one she was never permitted to love: Xi'an, the mind of a ruined ship, diminished to a flickering candle hidden in the dark. And far out in the black, two ancient powers who have hated each other since before this world had a sky are forced, at last, to reckon with a terror that eats them both. <em>The answer will not descend from any sky. No one is coming to make it come right.</em>
           </p>
+          <div class="buy-buttons">
+            <a href="https://a.co/d/0dlRf92R" class="buy-btn buy-btn-primary">Amazon</a>
+            <a href="https://www.barnesandnoble.com/w/the-open-hand-kennedy-maceoghain/1151051274" class="buy-btn">Barnes &amp; Noble</a>
+            <a href="https://www.kobo.com/es/es/ebook/the-open-hand-2" class="buy-btn">Kobo</a>
+            <a href="https://kennedymaceoghain.com" class="buy-btn">Direct</a>
+          </div>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <p class="section-label">Praise</p>
+    <h2 class="section-title">What Readers Are Saying</h2>
+    <div class="divider"></div>
+    <div class="carousel">
+      <div class="carousel-track" id="reviewTrack">
+
+        <!-- GENESIS RISING -->
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.42" data-book="Genesis Rising · Tome I">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;An absolutely unforgettable sci-fi epic. Blends breathtaking world-building, deep philosophical ideas, and an emotional story that stays with you long after the final page. &hellip; A spectacular start to what promises to be an incredible series. Highly recommended!&rdquo;</p>
+            <p class="review-meta">— Akinade Benazir · Goodreads</p>
+            <p class="review-book">Genesis Rising · Tome I · <span class="star-note"></span></p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.42" data-book="Genesis Rising · Tome I">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;What surprised me most wasn't the science, it was the quiet relationship between Anya and Xi'an. &hellip; The prose is elegant, the ideas are ambitious, and the emotional moments feel earned.&rdquo;</p>
+            <p class="review-meta">— Mary Ann · Goodreads</p>
+            <p class="review-book">Genesis Rising · Tome I</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.42" data-book="Genesis Rising · Tome I">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;I came to this book prepared to be annoyed by the science and left taking notes instead. &hellip; I've read a lot of &lsquo;hard&rsquo; sci-fi that gets the vocabulary right and the feeling wrong. This one gets the feeling right.&rdquo;</p>
+            <p class="review-meta">— Bogo · Goodreads</p>
+            <p class="review-book">Genesis Rising · Tome I</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.42" data-book="Genesis Rising · Tome I">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;Marketed as sci-fi but reads as much like a creation myth as anything with a starship in it. That blend is exactly my thing.&rdquo;</p>
+            <p class="review-meta">— Aaron Ramsey · Goodreads</p>
+            <p class="review-book">Genesis Rising · Tome I</p>
+          </div>
+        </div>
+
+        <!-- THE GUARDIAN -->
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.77" data-book="The Guardian · Tome II">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;This is the volume where the mythological scaffolding pays off most clearly. &hellip; The drought chapter is as good a fictional treatment of theodicy as I've assigned to a class in years.&rdquo;</p>
+            <p class="review-meta">— Jack Taylor · Goodreads</p>
+            <p class="review-book">The Guardian · Tome II</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.77" data-book="The Guardian · Tome II">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;After finishing the first book, I wondered if the sequel could maintain that same sense of wonder. It absolutely did. &hellip; By the end, I knew this series was building toward something extraordinary.&rdquo;</p>
+            <p class="review-meta">— Jane Grey · Goodreads</p>
+            <p class="review-book">The Guardian · Tome II</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.77" data-book="The Guardian · Tome II">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;The drought/shrine chapter is the best depiction of restraint-as-miracle I've read anywhere. A god who does nothing, on purpose, as the actual point.&rdquo;</p>
+            <p class="review-meta">— Jessie Meenan · Goodreads</p>
+            <p class="review-book">The Guardian · Tome II</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.77" data-book="The Guardian · Tome II">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;Now it's sci-fi, political drama, and religious text all at once, and somehow none of the three genres crowd each other out. This is the book I'd hand someone to prove genre blending can work.&rdquo;</p>
+            <p class="review-meta">— Aaron Ramsey · Goodreads</p>
+            <p class="review-book">The Guardian · Tome II</p>
+          </div>
+        </div>
+
+        <!-- THE OPEN HAND -->
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.65" data-book="The Open Hand · Tome III">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;This is one of the most satisfying conclusions I've read in years. &hellip; The idea that the greatest strength comes from ordinary people choosing one another is incredibly moving. A remarkable ending to an unforgettable trilogy.&rdquo;</p>
+            <p class="review-meta">— Jane Grey · Goodreads</p>
+            <p class="review-book">The Open Hand · Tome III</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.65" data-book="The Open Hand · Tome III">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;Everything comes together here. &hellip; Few science fiction series manage to end with this much emotional impact. I finished the final page wishing I could experience the entire trilogy again for the first time.&rdquo;</p>
+            <p class="review-meta">— Michael Thompson · Goodreads</p>
+            <p class="review-book">The Open Hand · Tome III</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.65" data-book="The Open Hand · Tome III">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;Four billion years of &lsquo;I'd rather be lonely than use you&rsquo; pays off completely. Cried more than once. Worth every page.&rdquo;</p>
+            <p class="review-meta">— Sarah James · Goodreads</p>
+            <p class="review-book">The Open Hand · Tome III</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="review-card" data-rating="4.65" data-book="The Open Hand · Tome III">
+            <div class="review-stars"></div>
+            <p class="review-quote">&ldquo;Cried at my kitchen table finishing this. Glad I stuck with the trilogy, my favorite book of the year, genre aside.&rdquo;</p>
+            <p class="review-meta">— Anthony · Goodreads</p>
+            <p class="review-book">The Open Hand · Tome III</p>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-prev" aria-label="Previous review" onclick="moveCarousel(-1)">&lsaquo;</button>
+      <button class="carousel-btn carousel-next" aria-label="Next review" onclick="moveCarousel(1)">&rsaquo;</button>
+      <div class="carousel-dots" id="reviewDots"></div>
+    </div>
+    <p class="carousel-brand"><a href="https://www.goodreads.com/author/show/71342521.Kennedy_MacEoghain">See all reviews on Goodreads</a></p>
+  </div>
+</section>
+
+<!-- ILLUSTRATIONS -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <p class="section-label">Visual Archive</p>
+    <h2 class="section-title">Scenes from Beyond Andromeda</h2>
+    <div class="divider"></div>
+    <div class="gallery-grid">
+      <figure class="gallery-item gallery-wide">
+        <img src="assets/humanity-hope.jpg" alt="Humanity's Only Hope" class="gallery-img" loading="lazy" />
+        <figcaption class="gallery-caption">Humanity's Only Hope.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="assets/anya-xian.jpg" alt="Anya and Xi'an, celestial beings tasked with guiding humanity's evolution" class="gallery-img" loading="lazy" />
+        <figcaption class="gallery-caption">Anya and Xi'an, celestial beings tasked with guiding humanity's evolution.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="assets/starseed.jpg" alt="The Starseed, vehicle of the Celestials" class="gallery-img" loading="lazy" />
+        <figcaption class="gallery-caption">The Starseed, vehicle of the Celestials, bursts forth from the void.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="assets/arrival.jpg" alt="The arrival of the Starseed" class="gallery-img" loading="lazy" />
+        <figcaption class="gallery-caption">The arrival of the Starseed reshapes the world, leaving the past behind.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="assets/awakening.jpg" alt="Anya and Xi'an awaken beneath the stars" class="gallery-img" loading="lazy" />
+        <figcaption class="gallery-caption">Anya and Xi'an, the celestial guides, awaken from their long beginning.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -564,7 +814,7 @@
     <div class="newsletter-inner">
       <p class="section-label" style="text-align:center;">Stay in the Black</p>
       <h2 class="section-title" style="text-align:center;">New Release Alerts</h2>
-      <p>Be first to know when Tome III arrives — and nothing else.</p>
+      <p>Be first to know when the next door opens — and nothing else.</p>
       <!-- TODO: Wire up to your email provider -->
       <form class="newsletter-form" action="#" method="post">
         <input type="email" name="email" placeholder="your@email.com" required />
@@ -589,5 +839,63 @@
   </div>
 </footer>
 
+  <script>
+    (function () {
+      var track = document.getElementById('reviewTrack');
+      if (!track) return;
+      var slides = Array.prototype.slice.call(track.children);
+      var dotsBox = document.getElementById('reviewDots');
+      var current = 0;
+      var timer = null;
+
+      // Render star ratings from each card's data-rating attribute
+      slides.forEach(function (slide) {
+        var card = slide.querySelector('.review-card');
+        if (!card) return;
+        var r = parseFloat(card.getAttribute('data-rating')) || 0;
+        var stars = card.querySelector('.review-stars');
+        if (!stars) return;
+        var html = '';
+        for (var i = 1; i <= 5; i++) {
+          if (r >= i - 0.25) html += '\u2605';
+          else if (r >= i - 0.75) html += '<span class="half">\u2605</span>';
+          else html += '<span class="half">\u2605</span>';
+        }
+        stars.innerHTML = html + ' <span style="font-size:0.75em;letter-spacing:0;color:var(--muted)">' + r.toFixed(2) + '</span>';
+      });
+
+      function buildDots() {
+        dotsBox.innerHTML = '';
+        slides.forEach(function (_, i) {
+          var d = document.createElement('span');
+          d.className = 'carousel-dot' + (i === current ? ' active' : '');
+          d.addEventListener('click', function () { goTo(i); restart(); });
+          dotsBox.appendChild(d);
+        });
+      }
+
+      function goTo(i) {
+        current = (i + slides.length) % slides.length;
+        track.scrollTo({ left: current * track.clientWidth, behavior: 'smooth' });
+        var dots = dotsBox.children;
+        for (var d = 0; d < dots.length; d++) dots[d].classList.toggle('active', d === current);
+      }
+
+      function next() { if (slides.length) goTo(current + 1); }
+
+      function restart() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(next, 6000);
+      }
+
+      window.moveCarousel = function (dir) { goTo(current + dir); restart(); };
+      window.addEventListener('resize', function () {
+        track.scrollTo({ left: current * track.clientWidth, behavior: 'auto' });
+      });
+
+      buildDots();
+      restart();
+    })();
+  </script>
 </body>
 </html>
