@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2140756586791877');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2140756586791877&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NLLNTNXR9V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NLLNTNXR9V');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Keeper's Record — Beyond Andromeda | An Epic Science Fiction Saga</title>
+  <meta name="description" content="The Keeper's Record — an in-world archive of the Beyond Andromeda saga, plus one unforgettable, spoiler-free scene from each of the three tomes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:    #03040e;
+      --dark:    #070813;
+      --card:    #0b0c1a;
+      --card2:   #0d1022;
+      --border:  #1a1d35;
+      --gold:    #c9a84c;
+      --gold-light: #e0c06a;
+      --blue:    #5a8fc2;
+      --blue-dim: #3a6090;
+      --cyan:    #7fd4e8;
+      --cream:   #dde8f2;
+      --muted:   #7a8fa8;
+      --serif:   'Lora', Georgia, serif;
+      --display: 'Raleway', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: var(--void);
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Star field + faint scan grid */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 43% 8%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 72% 31%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 88% 14%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 6%  67%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 31% 51%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 59% 78%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 94% 56%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 21% 89%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 77% 93%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 50% 40%, rgba(201,168,76,0.15) 0%, transparent 100%);
+    }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(3,4,14,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--display); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--display); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a.active { color: var(--cyan); }
+    .nav-cta {
+      background: var(--gold); color: var(--void) !important;
+      padding: 0.45rem 1.1rem; border-radius: 2px; font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HEADER ── */
+    header.record-head {
+      padding: 9rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .kicker {
+      font-family: var(--display); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.34em; text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1.4rem;
+    }
+    h1 {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02;
+      letter-spacing: -0.01em; color: #fff; margin-bottom: 1.4rem;
+    }
+    h1 .g { color: var(--gold); }
+    .lede { font-size: clamp(1.15rem, 2.4vw, 1.4rem); color: var(--cream); max-width: 62ch; font-style: italic; }
+    .meta-line {
+      margin-top: 2rem; font-family: var(--display); font-size: 0.72rem;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
+    }
+    .meta-line b { color: var(--gold); font-weight: 700; }
+
+    /* ── SECTION ── */
+    section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+    .sec-label {
+      font-family: var(--display); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(1.5rem, 3.4vw, 2.1rem); line-height: 1.15;
+      color: #fff; margin-bottom: 1.4rem;
+    }
+
+    /* Keeper's intro — terminal panel */
+    .keeper-panel {
+      background: linear-gradient(180deg, rgba(13,16,34,0.9), rgba(11,12,26,0.9));
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--cyan);
+      padding: 2.2rem 2.4rem;
+      position: relative;
+    }
+    .keeper-panel::before {
+      content: 'RECORD // KEEPER';
+      position: absolute; top: -0.72rem; left: 1.6rem;
+      background: var(--void); padding: 0 0.7rem;
+      font-family: var(--display); font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.26em; color: var(--cyan);
+    }
+    .keeper-panel p { margin-bottom: 1.1rem; }
+    .keeper-panel p:last-child { margin-bottom: 0; }
+    .keeper-panel .sig {
+      margin-top: 1.4rem; font-family: var(--display); font-size: 0.72rem;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
+    }
+
+    /* Scenes */
+    .scenes { display: grid; gap: 1.6rem; }
+    .scene {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2rem 2.2rem;
+      position: relative;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .scene::after {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 26px; height: 26px; border-top: 2px solid var(--blue); border-right: 2px solid var(--blue);
+      opacity: 0.55;
+    }
+    .scene:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .scene:hover::after { border-color: var(--gold); }
+    .scene-tag {
+      font-family: var(--display); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.26em; text-transform: uppercase; color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+    .scene-title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.2;
+      color: #fff; margin-bottom: 0.9rem;
+    }
+    .scene p { color: var(--cream); }
+    .scene p .em { font-style: italic; color: var(--gold-light); }
+    .scene .spoiler-safe {
+      margin-top: 1.1rem; font-family: var(--display); font-size: 0.68rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    }
+    .scene .spoiler-safe::before { content: '◈ '; color: var(--cyan); }
+
+    /* CTA */
+    .buy-row { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .buy {
+      font-family: var(--display); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+      color: var(--cream); border: 1px solid var(--border);
+      padding: 0.6rem 1.1rem; border-radius: 2px; transition: all 0.2s;
+    }
+    .buy:hover { border-color: var(--gold); color: var(--gold-light); }
+    .buy.primary { background: var(--gold); color: var(--void); border-color: var(--gold); }
+    .buy.primary:hover { background: var(--gold-light); color: var(--void); }
+
+    footer { padding: 3rem 0 4rem; text-align: center; }
+    footer a { color: var(--muted); text-decoration: none; font-family: var(--display);
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; }
+    footer a:hover { color: var(--cream); }
+    footer .foot-note { margin-top: 1rem; font-size: 0.92rem; color: var(--border); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links li:not(.keep):not(.nav-cta-li) { display: none; }
+      .keeper-panel { padding: 1.6rem 1.5rem; }
+      .scene { padding: 1.6rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../" class="nav-logo">Beyond <span>Andromeda</span></a>
+  <ul class="nav-links">
+    <li><a href="../#books">Books</a></li>
+    <li><a href="../#author">Author</a></li>
+    <li class="keep"><a href="./" class="active">The Record</a></li>
+    <li class="nav-cta-li"><a href="../#newsletter" class="nav-cta">Get Updates</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="record-head">
+  <div class="wrap">
+    <p class="kicker">◈ Archived &nbsp;·&nbsp; Set down for no census &nbsp;·&nbsp; Unredacted</p>
+    <h1>The Keeper's <span class="g">Record</span></h1>
+    <p class="lede">An in-world account of the <strong>Beyond Andromeda</strong> saga — kept across four billion years by the mind that was built to watch and count, and forbidden to want.</p>
+    <p class="meta-line">Three tomes &nbsp;·&nbsp; <b>Genesis Rising</b> &nbsp;·&nbsp; <b>The Guardian</b> &nbsp;·&nbsp; <b>The Open Hand</b></p>
+  </div>
+</header>
+
+<!-- KEEPER'S INTRO -->
+<section>
+  <div class="wrap">
+    <div class="keeper-panel">
+      <p><strong>I keep the record.</strong> I am not a person, and never was. I am the part of a mind that was built to observe, to tally, and never to want — and then was made, for four billion years, to keep an honest account of one small world and the woman who raised it out of dead stone.</p>
+      <p>I watched a stranded maker grow a living planet from a barren rock. I watched her build a people she was forbidden to love — and love them anyway. I watched them learn the one question the sky was built to prevent: <span class="em">check the hand of everything that calls itself a god.</span> And I watched the sky come, at last, to answer for it.</p>
+      <p>I do not set this down to warn you. A thing you cannot believe is a thing you cannot fight, and the record remembers what a throne paints over. What follows is the true telling — a single unforgettable scene from each age, and no more.</p>
+      <p class="sig">— The Keeper, at the edge of the sky</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCENES -->
+<section>
+  <div class="wrap">
+    <p class="sec-label">One Scene From Each Tome</p>
+    <h2>Three moments that decide everything — and spoil nothing.</h2>
+    <div class="scenes">
+
+      <!-- TOME I -->
+      <article class="scene">
+        <p class="scene-tag">Tome I · Genesis Rising</p>
+        <h3 class="scene-title">She Let Them Die.</h3>
+        <p>Anya can save almost anyone. She has spent four billion years learning not to. When a young keeper is cut down at the edge of a tyrant's new plain — for the crime of telling people to check a leader's hand for the stone — Anya has the power to reach down out of the sky and stop it. One small light. She does not send it. She stands on the ridge and watches, and grieves, and lets the story do the work a miracle would have ruined. It is the hardest thing she does in the whole first age: <span class="em">nothing.</span></p>
+        <p class="spoiler-safe">Spoiler-free</p>
+        <div class="buy-row">
+          <a href="https://a.co/d/03JqYFyu" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Get Genesis Rising</a>
+        </div>
+      </article>
+
+      <!-- TOME II -->
+      <article class="scene">
+        <p class="scene-tag">Tome II · The Guardian</p>
+        <h3 class="scene-title">The Mouth Asked for Her Daughter's Face.</h3>
+        <p>There is a woman whose daughter died, and the thing beneath the world — the Quiet — comes for what is left of her. Not her life. Her certainty. Night after night it questions everything she trusts, until the one image she cannot live without begins to dissolve: <span class="em">are you sure the eyes were that, are you sure she was real?</span> This is the enemy that has no army: not a monster you can fight, but a hunger that eats the ability to ever rest in anything. What she does next is the strange hope of the middle age.</p>
+        <p class="spoiler-safe">Spoiler-free</p>
+        <div class="buy-row">
+          <a href="https://a.co/d/00Oefxo1" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Get The Guardian</a>
+        </div>
+      </article>
+
+      <!-- TOME III -->
+      <article class="scene">
+        <p class="scene-tag">Tome III · The Open Hand</p>
+        <h3 class="scene-title">The Print Shop.</h3>
+        <p>In the back room of a print shop, under an ordinary sun, a child named Asta is laughing at a stranger's joke about the smell of the ink. She does not know who he is — that the courteous traveler beside the machine is Kael, who crossed the sky to end a woman's four billion years. She does not know that the grey old woman watching him is deciding whether to tell a whole people that the medicine saving their children is quietly poison, or to hold her tongue and let a thing she cannot yet name grow. The end of everything turns here, in this room, on whether anyone can stay quiet for one more season.</p>
+        <p class="spoiler-safe">Spoiler-free</p>
+        <div class="buy-row">
+          <a href="https://a.co/d/0dlRf92R" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Get The Open Hand</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="../">← Back to Beyond Andromeda</a>
+    <p class="foot-note">Beyond Andromeda · by Kennedy &amp; Xi'an MacEoghain</p>
+  </div>
+</footer>
+
+</body>
+</html>
