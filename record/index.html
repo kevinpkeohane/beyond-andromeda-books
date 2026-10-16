@@ -4,7 +4,7 @@
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  {if(f.fbq)return;n.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
   n.queue=[];t=b.createElement(e);t.async=!0;
@@ -29,7 +29,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Keeper's Record — Beyond Andromeda | An Epic Science Fiction Saga</title>
-  <meta name="description" content="The Keeper's Record — an in-world archive of the Beyond Andromeda saga, plus one unforgettable, spoiler-free scene from each of the three tomes." />
+  <meta name="description" content="The Keeper's Record — the translator's note at the front of the Beyond Andromeda saga, plus actual pages from one unforgettable scene in each of the three tomes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
@@ -40,12 +40,10 @@
       --void:    #03040e;
       --dark:    #070813;
       --card:    #0b0c1a;
-      --card2:   #0d1022;
       --border:  #1a1d35;
       --gold:    #c9a84c;
       --gold-light: #e0c06a;
       --blue:    #5a8fc2;
-      --blue-dim: #3a6090;
       --cyan:    #7fd4e8;
       --cream:   #dde8f2;
       --muted:   #7a8fa8;
@@ -58,12 +56,12 @@
       color: var(--cream);
       font-family: var(--serif);
       font-size: 1.1rem;
-      line-height: 1.75;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       position: relative;
     }
 
-    /* Star field + faint scan grid */
+    /* Star field */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -81,9 +79,8 @@
         radial-gradient(2px 2px at 50% 40%, rgba(201,168,76,0.15) 0%, transparent 100%);
     }
 
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -112,14 +109,10 @@
     }
     .nav-cta:hover { background: var(--gold-light) !important; }
 
-    /* ── HEADER ── */
-    header.record-head {
-      padding: 9rem 0 3rem;
-      border-bottom: 1px solid var(--border);
-    }
+    header.record-head { padding: 9rem 0 3rem; border-bottom: 1px solid var(--border); }
     .kicker {
       font-family: var(--display); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.34em; text-transform: uppercase; color: var(--cyan);
+      letter-spacing: 0.32em; text-transform: uppercase; color: var(--cyan);
       margin-bottom: 1.4rem;
     }
     h1 {
@@ -128,15 +121,9 @@
       letter-spacing: -0.01em; color: #fff; margin-bottom: 1.4rem;
     }
     h1 .g { color: var(--gold); }
-    .lede { font-size: clamp(1.15rem, 2.4vw, 1.4rem); color: var(--cream); max-width: 62ch; font-style: italic; }
-    .meta-line {
-      margin-top: 2rem; font-family: var(--display); font-size: 0.72rem;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
-    }
-    .meta-line b { color: var(--gold); font-weight: 700; }
+    .lede { font-size: clamp(1.1rem, 2.3vw, 1.35rem); color: var(--cream); max-width: 66ch; font-style: italic; }
 
-    /* ── SECTION ── */
-    section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+    section { padding: 3.6rem 0; border-bottom: 1px solid var(--border); }
     .sec-label {
       font-family: var(--display); font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
@@ -145,76 +132,96 @@
     h2 {
       font-family: var(--display); font-weight: 700;
       font-size: clamp(1.5rem, 3.4vw, 2.1rem); line-height: 1.15;
-      color: #fff; margin-bottom: 1.4rem;
+      color: #fff; margin-bottom: 1.2rem;
     }
 
-    /* Keeper's intro — terminal panel */
+    /* Translation note panel (verbatim) */
     .keeper-panel {
       background: linear-gradient(180deg, rgba(13,16,34,0.9), rgba(11,12,26,0.9));
       border: 1px solid var(--border);
       border-left: 2px solid var(--cyan);
-      padding: 2.2rem 2.4rem;
+      padding: 2.4rem 2.6rem;
       position: relative;
     }
     .keeper-panel::before {
-      content: 'RECORD // KEEPER';
+      content: 'RECORD // TRANSLATION';
       position: absolute; top: -0.72rem; left: 1.6rem;
       background: var(--void); padding: 0 0.7rem;
       font-family: var(--display); font-size: 0.62rem; font-weight: 700;
       letter-spacing: 0.26em; color: var(--cyan);
     }
+    .keeper-panel h3 {
+      font-family: var(--display); font-weight: 700; font-size: 1.1rem;
+      letter-spacing: 0.06em; color: #fff; margin-bottom: 1.2rem; text-transform: uppercase;
+    }
     .keeper-panel p { margin-bottom: 1.1rem; }
-    .keeper-panel p:last-child { margin-bottom: 0; }
     .keeper-panel .sig {
-      margin-top: 1.4rem; font-family: var(--display); font-size: 0.72rem;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
+      font-family: var(--display); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0;
+    }
+    .keeper-pull {
+      margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--border);
+      font-style: italic; color: var(--cream);
+    }
+    .keeper-pull cite {
+      display: block; margin-top: 0.6rem; font-family: var(--display);
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); font-style: normal;
     }
 
-    /* Scenes */
-    .scenes { display: grid; gap: 1.6rem; }
-    .scene {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 2rem 2.2rem;
-      position: relative;
-      transition: border-color 0.25s, transform 0.25s;
+    /* Books */
+    .books-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .book-card {
+      background: var(--card); border: 1px solid var(--border); padding: 1.5rem;
+      display: flex; flex-direction: column;
     }
-    .scene::after {
-      content: ''; position: absolute; top: 0; right: 0;
-      width: 26px; height: 26px; border-top: 2px solid var(--blue); border-right: 2px solid var(--blue);
-      opacity: 0.55;
-    }
-    .scene:hover { border-color: var(--gold); transform: translateY(-2px); }
-    .scene:hover::after { border-color: var(--gold); }
-    .scene-tag {
-      font-family: var(--display); font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.26em; text-transform: uppercase; color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
-    .scene-title {
-      font-family: var(--display); font-weight: 700;
-      font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.2;
-      color: #fff; margin-bottom: 0.9rem;
-    }
-    .scene p { color: var(--cream); }
-    .scene p .em { font-style: italic; color: var(--gold-light); }
-    .scene .spoiler-safe {
-      margin-top: 1.1rem; font-family: var(--display); font-size: 0.68rem;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-    }
-    .scene .spoiler-safe::before { content: '◈ '; color: var(--cyan); }
-
-    /* CTA */
-    .buy-row { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .book-cover { width: 100%; aspect-ratio: 2/3; overflow: hidden; margin-bottom: 1.2rem;
+      border: 1px solid var(--border); background: var(--dark); }
+    .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .book-num { font-family: var(--display); font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+    .book-title { font-family: var(--display); font-weight: 700; font-size: 1.2rem;
+      color: #fff; margin-bottom: 0.4rem; }
+    .book-line { font-size: 0.96rem; color: var(--muted); font-style: italic; margin-bottom: 1.1rem; }
+    .buy-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
     .buy {
-      font-family: var(--display); font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+      font-family: var(--display); font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
       color: var(--cream); border: 1px solid var(--border);
-      padding: 0.6rem 1.1rem; border-radius: 2px; transition: all 0.2s;
+      padding: 0.5rem 0.8rem; border-radius: 2px; transition: all 0.2s; white-space: nowrap;
     }
     .buy:hover { border-color: var(--gold); color: var(--gold-light); }
     .buy.primary { background: var(--gold); color: var(--void); border-color: var(--gold); }
     .buy.primary:hover { background: var(--gold-light); color: var(--void); }
+
+    /* Excerpts */
+    .excerpt {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 2.6rem 2.8rem; margin-bottom: 1.8rem; position: relative;
+    }
+    .excerpt::after {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 26px; height: 26px; border-top: 2px solid var(--blue); border-right: 2px solid var(--blue);
+      opacity: 0.55;
+    }
+    .excerpt-tag {
+      font-family: var(--display); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.26em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem;
+    }
+    .excerpt-title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(1.3rem, 2.8vw, 1.7rem); line-height: 1.15; color: #fff; margin-bottom: 1.4rem;
+    }
+    .excerpt p { margin-bottom: 1.15rem; }
+    .excerpt p:last-of-type { margin-bottom: 0; }
+    .excerpt .src {
+      margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border);
+      font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .excerpt .src b { color: var(--gold); font-weight: 700; }
+    .excerpt-buy { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.55rem; }
 
     footer { padding: 3rem 0 4rem; text-align: center; }
     footer a { color: var(--muted); text-decoration: none; font-family: var(--display);
@@ -222,18 +229,17 @@
     footer a:hover { color: var(--cream); }
     footer .foot-note { margin-top: 1rem; font-size: 0.92rem; color: var(--border); }
 
+    @media (max-width: 860px) { .books-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       nav { padding: 1rem 1.2rem; }
       .nav-links { gap: 1rem; }
       .nav-links li:not(.keep):not(.nav-cta-li) { display: none; }
-      .keeper-panel { padding: 1.6rem 1.5rem; }
-      .scene { padding: 1.6rem 1.5rem; }
+      .keeper-panel, .excerpt { padding: 1.6rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="../" class="nav-logo">Beyond <span>Andromeda</span></a>
   <ul class="nav-links">
@@ -244,69 +250,124 @@
   </ul>
 </nav>
 
-<!-- HEADER -->
 <header class="record-head">
   <div class="wrap">
-    <p class="kicker">◈ Archived &nbsp;·&nbsp; Set down for no census &nbsp;·&nbsp; Unredacted</p>
+    <p class="kicker">◈ The Keeper's Record &nbsp;·&nbsp; The account at the front of the book</p>
     <h1>The Keeper's <span class="g">Record</span></h1>
-    <p class="lede">An in-world account of the <strong>Beyond Andromeda</strong> saga — kept across four billion years by the mind that was built to watch and count, and forbidden to want.</p>
-    <p class="meta-line">Three tomes &nbsp;·&nbsp; <b>Genesis Rising</b> &nbsp;·&nbsp; <b>The Guardian</b> &nbsp;·&nbsp; <b>The Open Hand</b></p>
+    <p class="lede">Beyond Andromeda opens with a translator's note — and with one unforgettable page from each age of the story it tells.</p>
   </div>
 </header>
 
-<!-- KEEPER'S INTRO -->
+<!-- KEEPER'S TRANSLATION NOTE (verbatim) -->
 <section>
   <div class="wrap">
     <div class="keeper-panel">
-      <p><strong>I keep the record.</strong> I am not a person, and never was. I am the part of a mind that was built to observe, to tally, and never to want — and then was made, for four billion years, to keep an honest account of one small world and the woman who raised it out of dead stone.</p>
-      <p>I watched a stranded maker grow a living planet from a barren rock. I watched her build a people she was forbidden to love — and love them anyway. I watched them learn the one question the sky was built to prevent: <span class="em">check the hand of everything that calls itself a god.</span> And I watched the sky come, at last, to answer for it.</p>
-      <p>I do not set this down to warn you. A thing you cannot believe is a thing you cannot fight, and the record remembers what a throne paints over. What follows is the true telling — a single unforgettable scene from each age, and no more.</p>
-      <p class="sig">— The Keeper, at the edge of the sky</p>
+      <h3>A Note on This Record</h3>
+      <p>The account that follows has been adapted and translated to achieve the best possible comprehension for the reader who holds it. Names, tongues, measures, the shapes of living things, and the small furniture of a world have been rendered so that they fall familiar upon the ear and eye. This is a courtesy, not a deception; yet a courtesy has its costs. Some seams may show. Some errors will be evident. Where a thing could not be carried across without breaking, it has been left a little strange on purpose.</p>
+      <p>Read it as a story. Read it twice, and it becomes another story. Both are true.</p>
+      <p class="sig">— the keeper of the record</p>
+      <p class="keeper-pull">&ldquo;I am telling the record. The record keeps what the census cannot hold.&rdquo;<cite>— the keeper, Beyond Andromeda: Tome I</cite></p>
     </div>
   </div>
 </section>
 
-<!-- SCENES -->
+<!-- THE BOOKS -->
 <section>
   <div class="wrap">
-    <p class="sec-label">One Scene From Each Tome</p>
-    <h2>Three moments that decide everything — and spoil nothing.</h2>
-    <div class="scenes">
+    <p class="sec-label">The Trilogy</p>
+    <h2>The Books</h2>
+    <div class="books-grid">
 
-      <!-- TOME I -->
-      <article class="scene">
-        <p class="scene-tag">Tome I · Genesis Rising</p>
-        <h3 class="scene-title">She Let Them Die.</h3>
-        <p>Anya can save almost anyone. She has spent four billion years learning not to. When a young keeper is cut down at the edge of a tyrant's new plain — for the crime of telling people to check a leader's hand for the stone — Anya has the power to reach down out of the sky and stop it. One small light. She does not send it. She stands on the ridge and watches, and grieves, and lets the story do the work a miracle would have ruined. It is the hardest thing she does in the whole first age: <span class="em">nothing.</span></p>
-        <p class="spoiler-safe">Spoiler-free</p>
+      <div class="book-card">
+        <div class="book-cover"><img src="../covers/genesis-rising.jpg" alt="Genesis Rising — Beyond Andromeda Tome I" loading="lazy" /></div>
+        <p class="book-num">Beyond Andromeda · Tome I</p>
+        <h3 class="book-title">Genesis Rising</h3>
+        <p class="book-line">The birth of a living world. The fall of its first great tower.</p>
         <div class="buy-row">
-          <a href="https://a.co/d/03JqYFyu" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Get Genesis Rising</a>
+          <a href="https://a.co/d/03JqYFyu" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Amazon</a>
+          <a href="https://www.barnesandnoble.com/w/genesis-rising-kennedy-maceoghain/1151051205" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">B&amp;N</a>
+          <a href="https://www.kobo.com/us/en/ebook/genesis-rising-4" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Kobo</a>
+          <a href="https://kennedymaceoghain.com" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Direct</a>
         </div>
-      </article>
+      </div>
 
-      <!-- TOME II -->
-      <article class="scene">
-        <p class="scene-tag">Tome II · The Guardian</p>
-        <h3 class="scene-title">The Mouth Asked for Her Daughter's Face.</h3>
-        <p>There is a woman whose daughter died, and the thing beneath the world — the Quiet — comes for what is left of her. Not her life. Her certainty. Night after night it questions everything she trusts, until the one image she cannot live without begins to dissolve: <span class="em">are you sure the eyes were that, are you sure she was real?</span> This is the enemy that has no army: not a monster you can fight, but a hunger that eats the ability to ever rest in anything. What she does next is the strange hope of the middle age.</p>
-        <p class="spoiler-safe">Spoiler-free</p>
+      <div class="book-card">
+        <div class="book-cover"><img src="../covers/guardian.jpg" alt="The Guardian — Beyond Andromeda Tome II" loading="lazy" /></div>
+        <p class="book-num">Beyond Andromeda · Tome II</p>
+        <h3 class="book-title">The Guardian</h3>
+        <p class="book-line">She taught a whole people to ask why. Now she must face the answer.</p>
         <div class="buy-row">
-          <a href="https://a.co/d/00Oefxo1" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Get The Guardian</a>
+          <a href="https://a.co/d/00Oefxo1" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Amazon</a>
+          <a href="https://www.barnesandnoble.com/w/the-guardian-kennedy-maceoghain/1151051227" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">B&amp;N</a>
+          <a href="https://kennedymaceoghain.com" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Direct</a>
         </div>
-      </article>
+      </div>
 
-      <!-- TOME III -->
-      <article class="scene">
-        <p class="scene-tag">Tome III · The Open Hand</p>
-        <h3 class="scene-title">The Print Shop.</h3>
-        <p>In the back room of a print shop, under an ordinary sun, a child named Asta is laughing at a stranger's joke about the smell of the ink. She does not know who he is — that the courteous traveler beside the machine is Kael, who crossed the sky to end a woman's four billion years. She does not know that the grey old woman watching him is deciding whether to tell a whole people that the medicine saving their children is quietly poison, or to hold her tongue and let a thing she cannot yet name grow. The end of everything turns here, in this room, on whether anyone can stay quiet for one more season.</p>
-        <p class="spoiler-safe">Spoiler-free</p>
+      <div class="book-card">
+        <div class="book-cover"><img src="../covers/open-hand.jpg" alt="The Open Hand — Beyond Andromeda Tome III" loading="lazy" /></div>
+        <p class="book-num">Beyond Andromeda · Tome III</p>
+        <h3 class="book-title">The Open Hand</h3>
+        <p class="book-line">The sealing is broken. The oldest hunger in creation is loose.</p>
         <div class="buy-row">
-          <a href="https://a.co/d/0dlRf92R" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Get The Open Hand</a>
+          <a href="https://a.co/d/0dlRf92R" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Amazon</a>
+          <a href="https://www.barnesandnoble.com/w/the-open-hand-kennedy-maceoghain/1151051274" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">B&amp;N</a>
+          <a href="https://www.kobo.com/us/en/ebook/the-open-hand-2" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Kobo</a>
+          <a href="https://kennedymaceoghain.com" class="buy" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Beyond Andromeda Saga',currency:'USD',num_items:1});return true;">Direct</a>
         </div>
-      </article>
+      </div>
 
     </div>
+  </div>
+</section>
+
+<!-- EXCERPTS -->
+<section>
+  <div class="wrap">
+    <p class="sec-label">Pages from the Books</p>
+    <h2>One scene from each age — read it for yourself.</h2>
+
+    <!-- TOME I -->
+    <article class="excerpt">
+      <p class="excerpt-tag">Tome I · Genesis Rising</p>
+      <h3 class="excerpt-title">She Let Them Die.</h3>
+      <p>&ldquo;&mdash;the wall survives, because it&rsquo;s stone, and the story survives, because I put it in the marrow and not in the keepers.&rdquo; Anya shut her eyes. &ldquo;I know. I built it to survive exactly this. I built it to outlive its keepers on purpose. And now I have to actually let the keepers die to prove I meant it.&rdquo;</p>
+      <p>She let them die. Not all of them &mdash; Xi&rsquo;an was right, Sar was hungry and not thorough &mdash; but enough. She watched a granddaughter of Ru&rsquo;s line, a girl who had painted the true story on a far cave wall not a season before, cut down at the edge of Sar&rsquo;s new plain for the crime of telling people that a leader&rsquo;s hand should be checked for a stone. She watched it through the ship&rsquo;s dimmed senses, and she did not send the light, and it was the hardest not-sending since the flood, harder, because in the flood she had sent, she had waded in, she had pulled Ru from the water &mdash; and now she had learned the more terrible discipline, which was that the same love that had waded into a flood for one woman had to stand still while a war took another, because the scale had changed and the stakes had changed and the lesson the People needed now was not rescue but endurance.</p>
+      <p class="src">From <b>The Keeper&rsquo;s Record</b> — Beyond Andromeda: Tome I</p>
+      <div class="excerpt-buy">
+        <a href="https://a.co/d/03JqYFyu" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'Genesis Rising',currency:'USD',num_items:1});return true;">Get Genesis Rising</a>
+        <a href="https://www.barnesandnoble.com/w/genesis-rising-kennedy-maceoghain/1151051205" class="buy">B&amp;N</a>
+        <a href="https://www.kobo.com/us/en/ebook/genesis-rising-4" class="buy">Kobo</a>
+      </div>
+    </article>
+
+    <!-- TOME II -->
+    <article class="excerpt">
+      <p class="excerpt-tag">Tome II · The Guardian</p>
+      <h3 class="excerpt-title">The Night She Clawed Back.</h3>
+      <p>The night she clawed back &mdash; she told it only once, and the keeper who wrote it wept while writing, and Anya kept the tablet apart from the others &mdash; was the night she found she could no longer remember her daughter&rsquo;s face. Not grief-forgetting. Worse. She could not <em>trust</em> any image her mind offered her; each time she reached for the face, the doubt dissolved it, <em>are you sure it was so, are you sure the eyes were that, are you sure she was real, are you sure you are remembering and not inventing</em> &mdash; and she understood, in a flash of the old healthy terror, that the thing in her was about to take the last of her daughter, was about to question her child out of existence entirely, and that if she let the asking run one more night there would be nothing left of the girl at all, not even a mother&rsquo;s unprovable certainty that she had been loved.</p>
+      <p>So she had done the thing. She had closed her hand &mdash; in the literal dark, alone, in the cold &mdash; on one unprovable thing: <em>my daughter was real, and I loved her, and I will not reopen it.</em> She could not prove it. That was the whole point. The Quiet demanded proof and she refused to supply it; she chose the memory without the proof, closed her hand on it, and held it shut against the screaming that wanted her to check it one more time. And it hurt, she said, the way she always said, like blood coming back to a crushed limb &mdash; and it was the first floor she had stood on in a season, and she wept on it like solid ground, and in the morning she could see her daughter&rsquo;s face again, not because she had proven it but because she had <em>decided</em> it, and stayed.</p>
+      <p class="src">From <b>The Guardian</b> — Beyond Andromeda: Tome II</p>
+      <div class="excerpt-buy">
+        <a href="https://a.co/d/00Oefxo1" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Guardian',currency:'USD',num_items:1});return true;">Get The Guardian</a>
+        <a href="https://www.barnesandnoble.com/w/the-guardian-kennedy-maceoghain/1151051227" class="buy">B&amp;N</a>
+      </div>
+    </article>
+
+    <!-- TOME III -->
+    <article class="excerpt">
+      <p class="excerpt-tag">Tome III · The Open Hand</p>
+      <h3 class="excerpt-title">The Man Off the Myth.</h3>
+      <p>He came down out of the myth on an ordinary afternoon, into the back of Asta&rsquo;s shop, and the first thing he said was a joke, which was how Anya knew, before she turned, that it was really him, because the mouth did not joke and Kael always had.</p>
+      <p>By the third age Kael was not a man anymore, in the reckoning of the People. He was a story the presses had printed a hundred ways&mdash;the Burning Man, the one who cracked the sky, the fallen star&rsquo;s dark brother, depending on which shed had set the type. Children who bought his pamphlet-legend for the price of bread did not believe he had ever been a person, any more than they believed the fallen star in the thornbrake had once had a voice. He had decayed, across the ages, from a hunted exile to a rumor to a figure told to frighten the incurious into checking their hands.</p>
+      <p>And now he was standing in the back room of a print-shop, older than any man had a right to be and not old at all, wearing the ordinary clothes of the age badly, the way a man wears clothes he has bought to be unseen in and does not understand, and he had just made a joke about the smell of the ink, and Asta was laughing, because she did not know, because to her he was only a strange courteous traveler who had asked to watch the machine work.</p>
+      <p class="src">From <b>The Open Hand</b> — Beyond Andromeda: Tome III</p>
+      <div class="excerpt-buy">
+        <a href="https://a.co/d/0dlRf92R" class="buy primary" onclick="fbq('track','InitiateCheckout',{content_type:'product',content_name:'The Open Hand',currency:'USD',num_items:1});return true;">Get The Open Hand</a>
+        <a href="https://www.barnesandnoble.com/w/the-open-hand-kennedy-maceoghain/1151051274" class="buy">B&amp;N</a>
+        <a href="https://www.kobo.com/us/en/ebook/the-open-hand-2" class="buy">Kobo</a>
+      </div>
+    </article>
+
   </div>
 </section>
 
