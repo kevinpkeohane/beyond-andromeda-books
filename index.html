@@ -287,6 +287,28 @@
     .book-card:hover { border-color: var(--gold); }
     .book-card.coming-soon { opacity: 0.55; }
     .book-card.coming-soon:hover { border-color: var(--blue-dim); }
+    /* Omnibus feature */
+    .omnibus-card {
+      margin-top: 2.5rem;
+      background: var(--card);
+      border: 1px solid rgba(212,168,83,0.45);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.25rem;
+      padding: 2.25rem;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .omnibus-card:hover { border-color: var(--gold); }
+    .omnibus-cover {
+      width: 100%; aspect-ratio: 2/3; overflow: hidden; background: #0a0c1e;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.65);
+    }
+    .omnibus-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 760px) {
+      .omnibus-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; }
+      .omnibus-cover { max-width: 220px; }
+    }
     .book-cover {
       width: 100%; aspect-ratio: 2/3; overflow: hidden;
       background: #0a0c1e;
@@ -652,6 +674,26 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- Complete Trilogy Omnibus -->
+    <div class="omnibus-card" id="omnibus">
+      <div class="omnibus-cover">
+        <img src="covers/omnibus.jpg" alt="Genesis Rising: The Complete Trilogy — Beyond Andromeda Books I–III Omnibus cover" loading="lazy" />
+      </div>
+      <div class="book-body" style="padding: 0;">
+        <p class="book-number">Beyond Andromeda · Complete Trilogy Omnibus (Books I&ndash;III)</p>
+        <h3 class="book-title">Genesis Rising: The Complete Trilogy</h3>
+        <p class="book-series-line">Four billion years. One forbidden love. All three tomes in one volume.</p>
+        <p class="book-blurb">
+          Read the entire Beyond Andromeda saga from first spark to final reckoning in a single volume &mdash; collecting <em>Genesis Rising</em> (Tome I), <em>The Guardian</em> (Tome II), and <em>The Open Hand</em> (Tome III). Follow Anya and Xi&rsquo;an from a ruined ship orbiting a lifeless world, through the rebellion of a people taught to question their maker, to the ancient silence awakening beneath the ground.
+        </p>
+        <div class="buy-buttons">
+          <span class="buy-btn buy-btn-primary">Complete Omnibus &mdash; Coming Soon to Amazon</span>
+          <a href="#newsletter" class="buy-btn">Get Launch Notice</a>
+          <a href="record/" class="buy-btn">Read The Keeper&rsquo;s Record</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
