@@ -530,6 +530,20 @@
       font-family: var(--display); letter-spacing: 0.1em;
     }
 
+    /* ── FEATURED AUDIO ── */
+    #deep-dive { scroll-margin-top: 5rem; background: linear-gradient(145deg, #0d1021, #070813); border-block: 1px solid var(--border); }
+    .audio-feature { display: grid; grid-template-columns: minmax(120px, 185px) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+    .audio-feature img { display: block; width: 100%; height: auto; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+    .audio-feature .section-title { margin-bottom: 1rem; }
+    .audio-feature .audio-summary { color: var(--cream); max-width: 65ch; margin-bottom: 1rem; }
+    .audio-meta { font-family: var(--display); color: var(--gold-light); font-size: .8rem; letter-spacing: .08em; margin-bottom: 1rem; }
+    .audio-feature audio { display: block; width: min(100%, 640px); margin: 1rem 0; }
+    .audio-spoiler { color: #b5c5d4; font-family: var(--display); font-size: .86rem; line-height: 1.6; }
+    .audio-feature a { color: var(--gold-light); text-underline-offset: .2em; }
+    .hero-listen { margin-left: .65rem; }
+    @media (max-width: 600px) { .audio-feature { grid-template-columns: 1fr; } .audio-feature img { width: 120px; } .hero-listen { margin: .8rem 0 0; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.2rem; }
@@ -551,6 +565,7 @@
   <a href="#" class="nav-logo">Beyond <span>Andromeda</span></a>
   <ul class="nav-links">
     <li><a href="#books">Books</a></li>
+    <li><a href="#deep-dive">Listen</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="record/">The Record</a></li>
     <li><a href="#author">Author</a></li>
@@ -571,6 +586,26 @@
       now the people they made are learning to say no to their gods.
     </p>
     <a href="#books" class="btn btn-fill">Begin the Saga</a>
+    <a href="#deep-dive" class="btn hero-listen">Listen to the Deep Dive</a>
+  </div>
+</section>
+
+<!-- FEATURED AUDIO -->
+<section id="deep-dive" aria-labelledby="deep-dive-title">
+  <div class="container audio-feature">
+    <img src="covers/genesis-rising.jpg" alt="Genesis Rising, Beyond Andromeda Tome I cover" width="400" height="600" loading="lazy">
+    <div>
+      <p class="section-label">Featured audio · Beyond Andromeda</p>
+      <h2 class="section-title" id="deep-dive-title">The God Who Refused Worship</h2>
+      <p class="audio-summary">Four billion years trapped beneath a newborn world. A creator forbidden to love. A ship&rsquo;s mind that chooses to become someone. Listen to a deep dive into <em>Genesis Rising</em>, the first Beyond Andromeda tome, and the question at its heart: what does a creator owe the life she brings into being?</p>
+      <p class="audio-meta">Audio discussion &nbsp;·&nbsp; 23 minutes 33 seconds</p>
+      <p class="audio-spoiler"><strong>Contains major spoilers for Tome I.</strong></p>
+      <audio controls preload="none" aria-label="Play The God Who Refused Worship audio discussion">
+        <source src="audio/the-god-who-refused-worship.m4a" type="audio/mp4">
+        Your browser does not support embedded audio. <a href="audio/the-god-who-refused-worship.m4a">Download the audio discussion</a>.
+      </audio>
+      <p class="audio-spoiler"><a href="audio/the-god-who-refused-worship.m4a" download>Download the audio</a> &nbsp;·&nbsp; <a href="#books">Explore the books</a></p>
+    </div>
   </div>
 </section>
 
